@@ -1,144 +1,149 @@
-# WorkFlow AI Assistant
+# WorkFlow AI — Workplace Productivity Assistant
 
-🤖 AI Workplace Productivity Assistant
+An AI-powered, single-page productivity workspace that brings everyday workplace tools together in one clean, responsive interface: write emails, summarize meetings, plan tasks, and research topics — all in one place.
 
-An AI-powered web application designed to help professionals improve their daily workplace productivity by simplifying common tasks such as writing, summarising information, generating ideas, organising work, and creating professional content.
+> ⚠️ **Prototype notice:** AI outputs in this build are **mock responses** generated locally (no external API keys required). They're meant for demonstration and should be reviewed and verified before real use.
 
-🚀 Overview
+---
 
-The AI Workplace Productivity Assistant is a modern, responsive application that brings AI-powered productivity tools into one easy-to-use platform.
+## ✨ Features
 
-The goal is to help professionals spend less time on repetitive tasks and more time focusing on meaningful work.
+| Tool | What it does |
+| --- | --- |
+| 📊 **Dashboard** | Overview with quick stats, tool cards, and one-click shortcuts. |
+| 📧 **Email Generator** | Draft professional emails by audience, purpose, tone, and context. |
+| 📄 **Meeting Summarizer** | Turn raw meeting notes into key points, decisions, action items, and deadlines. |
+| ✅ **Task Planner** | Order tasks by priority and deadline into an actionable timeline. |
+| 🔎 **Research Assistant** | Get structured overviews, insights, and recommendations on a topic. |
+| 💬 **AI Chatbot** | Ask quick workplace questions and get context-aware starter answers. |
+| 📚 **Prompt Library** | A curated set of reusable, copy-ready workplace prompts. |
+| 🛡️ **Responsible AI** | Guidance on human oversight, accuracy, privacy, and safe use. |
 
-✨ Features
+Each tool includes a **"Load Demo Data"** button so you can see it in action instantly.
 
-* 📝 AI Writing Assistant
-    Generate and improve professional emails, messages, reports, and other workplace content.
-* 📄 Text Summariser
-    Turn lengthy information into concise and easy-to-understand summaries.
-* 💡 Idea Generator
-    Generate ideas for projects, presentations, content, meetings, and workplace activities.
-* 📊 Workplace Productivity Tools
-    Support users with planning, organisation, and everyday professional tasks.
-* 🎯 Prompt-Based AI Assistance
-    Users can provide instructions and receive AI-generated responses tailored to their needs.
-* 📱 Responsive Design
-    Designed to work across desktop, tablet, and mobile devices.
-* 🎨 Modern User Interface
-    Clean, professional, and user-friendly interface focused on ease of use.
+---
 
-🛠️ Technologies Used
+## 🎨 Design
 
-* Frontend: React / TypeScript
-* Styling: Modern responsive CSS / Tailwind CSS
-* AI: Generative AI
-* Development: Lovable
-* Version Control: GitHub
+- Clean, professional, **blue** color theme across light and dark modes.
+- Fully **responsive** — desktop, tablet, and mobile.
+- Accessible UI components built on **Radix UI** primitives and **shadcn/ui** patterns.
+- Mock AI logic isolated in a single module (`src/lib/mock-ai.ts`) for easy replacement.
 
-🎯 Target Users
+---
 
-The application is designed for:
+## 🛠️ Tech Stack
 
-* Professionals
-* Entrepreneurs
-* Students
-* Business owners
-* Administrative staff
-* Content creators
-* Teams and organisations
+- **Framework:** [TanStack Start](https://tanstack.com/start) v1 (full-stack React)
+- **UI:** React 19 + TypeScript
+- **Routing:** TanStack Router
+- **Styling:** Tailwind CSS v4
+- **Components:** Radix UI + lucide-react icons
+- **Charts:** Recharts
+- **Build tool:** Vite
 
-💼 Use Cases
+---
 
-The AI Workplace Productivity Assistant can be used to:
+## 🚀 Getting Started
 
-1. Draft professional emails.
-2. Summarise meeting notes or documents.
-3. Generate workplace ideas.
-4. Improve written communication.
-5. Create professional content.
-6. Save time on repetitive workplace tasks.
-7. Assist with everyday planning and productivity.
+### Prerequisites
 
-🌟 Why This Project?
+- [Node.js](https://nodejs.org/) 18+
+- [Bun](https://bun.sh/) (recommended) or npm
 
-Many professionals spend a significant amount of time on repetitive tasks such as writing emails, summarising information, brainstorming ideas, and organising work.
+### Installation
 
-This project demonstrates how Generative AI can be integrated into everyday workplace applications to improve efficiency while keeping humans involved in reviewing and making final decisions.
+```bash
+# Clone the repository
+git clone https://github.com/<your-username>/WorkFlow-AI.git
+cd WorkFlow-AI
 
-🔐 Responsible AI
+# Install dependencies
+bun install
+# or: npm install
+```
 
-The application is designed with human oversight in mind.
+### Run the development server
 
-AI-generated content should be reviewed by the user before being used or shared. Users remain responsible for checking information for accuracy, relevance, tone, and appropriateness.
+```bash
+bun run dev
+# or: npm run dev
+```
 
-📂 Project Structure
+The app will be available at the local URL printed in your terminal (default `http://localhost:8080`).
 
-AI-Workplace-Productivity-Assistant/
-│
-├── public/
+### Other scripts
+
+```bash
+bun run build      # production build
+bun run build:dev  # development-mode build
+bun run preview    # preview the production build
+bun run lint       # run ESLint
+bun run format     # format with Prettier
+```
+
+---
+
+## 📂 Project Structure
+
+```
+WorkFlow-AI/
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   └── ...
-│
-├── README.md
+│   ├── components/        # Shared UI components (AppLayout, shadcn/ui)
+│   ├── lib/
+│   │   └── mock-ai.ts     # All mock AI logic — replace with real API calls
+│   ├── routes/            # File-based routes (one file per page)
+│   │   ├── __root.tsx     # Root layout (head, fonts)
+│   │   ├── index.tsx      # Dashboard
+│   │   ├── email.tsx
+│   │   ├── meetings.tsx
+│   │   ├── tasks.tsx
+│   │   ├── research.tsx
+│   │   ├── chat.tsx
+│   │   ├── prompts.tsx
+│   │   └── responsible-ai.tsx
+│   ├── router.tsx
+│   ├── start.ts
+│   └── styles.css         # Tailwind theme tokens (blue palette)
+├── public/
 ├── package.json
-└── ...
+└── vite.config.ts
+```
 
-⚙️ Getting Started
+---
 
-Prerequisites
+## 🔌 Connecting Real AI (Optional)
 
-Make sure you have installed:
+This prototype uses mock logic so it runs without any API keys. To connect a real AI backend:
 
-* Node.js
-* npm
-* Git
+1. Open `src/lib/mock-ai.ts`.
+2. Replace the exported functions (`generateEmail`, `summarizeMeeting`, `planTasks`, `research`, `chatReply`) with calls to your AI provider.
+3. Keep the same input/output types so the pages continue to work unchanged.
 
-Installation
+---
 
-Clone the repository:
+## 🔐 Responsible AI
 
-git clone YOUR_GITHUB_REPOSITORY_LINK
+WorkFlow AI is built with **human oversight** in mind:
 
-Navigate into the project:
+- AI-generated content is a starting point, not a final answer.
+- Users should review output for accuracy, tone, relevance, and appropriateness before sharing.
+- See the in-app **Responsible AI** page for full guidance.
 
-cd AI-Workplace-Productivity-Assistant
+---
 
-Install dependencies:
+## 👤 Author
 
-npm install
-
-Start the development server:
-
-npm run dev
-
-The application will then be available through the local development URL provided by your development environment.
-
-
-🔮 Future Improvements
-
-Potential future enhancements include:
-
-* Voice-based AI assistance
-* AI meeting-note generation
-* Calendar integration
-* Task management
-* Document upload and analysis
-* Personalised AI recommendations
-* Team collaboration
-* Additional AI productivity tools
-* User accounts and saved AI conversations
-
-👩🏽‍💻 Project
-
-AI Workplace Productivity Assistant
+**Pfano Tshiambwa**
 
 Developed as part of the AI Skills Acceleration (ASA 17) programme.
 
-Author
+---
 
-Pfano Tshiambwa
+## 📄 License
+
+This project is provided as-is for educational and prototype purposes. Add a license file if you intend to distribute or reuse the code.
+
+---
 
 ⸻
