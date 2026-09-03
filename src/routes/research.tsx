@@ -27,7 +27,7 @@ const TYPES = ["Quick Summary", "Detailed Explanation", "Key Insights", "Recomme
 
 function ResearchPage() {
   const [topic, setTopic] = useState("");
-  const [type, setType] = useState(TYPES[0]);
+  const [type, setType] = useState("Quick Summary");
   const [result, setResult] = useState("");
   const [demo, setDemo] = useState(false);
 
