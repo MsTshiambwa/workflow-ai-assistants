@@ -25,7 +25,8 @@ Each tool includes a **"Load Demo Data"** button so you can see it in action ins
 
 ## 🎨 Design
 
-- Clean, professional, **blue** color theme across light and dark modes.
+- Clean, professional look with a **bold violet** accent color (high-chroma royal violet) across light and dark modes.
+- Subtle **textured background** — a soft tinted lavender surface with fixed radial glows for depth, while content cards stay crisp and white.
 - Fully **responsive** — desktop, tablet, and mobile.
 - Accessible UI components built on **Radix UI** primitives and **shadcn/ui** patterns.
 - Mock AI logic isolated in a single module (`src/lib/mock-ai.ts`) for easy replacement.
@@ -104,7 +105,7 @@ WorkFlow-AI/
 │   │   └── responsible-ai.tsx
 │   ├── router.tsx
 │   ├── start.ts
-│   └── styles.css         # Tailwind theme tokens (blue palette)
+│   └── styles.css         # Tailwind theme tokens (violet palette + background)
 ├── public/
 ├── package.json
 └── vite.config.ts
